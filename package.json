@@ -1,0 +1,37 @@
+{
+  "name": "next-app",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*": [
+      "nx format:write --files",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git",
+      "czConfig": "./commitlint.config.js"
+    }
+  },
+  "devDependencies": {
+    "@nrwl/nx-cloud": "latest",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.4.4",
+    "cz-git": "^1.6.0",
+    "husky": "^8.0.3",
+    "lerna": "latest",
+    "lint-staged": "^13.2.0",
+    "nx": "latest",
+    "prettier": "^2.8.4",
+    "pretty-quick": "^3.1.3"
+  }
+}
